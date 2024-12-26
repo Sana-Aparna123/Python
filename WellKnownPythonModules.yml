@@ -1,0 +1,44 @@
+Following are the frequently used python modules that are well known and used by most of the python developers...
+
+
+Built-in Modules:
+os
+sys
+json
+datetime
+time
+math
+random
+calendar
+collections
+re
+sqlite3
+
+
+3rd party Modules:
+ipython #Interactive Python shell
+boto3 #AWS SDK to connect with AWS services
+fastapi
+faker #Generate fake data
+uvicorn
+Jinja2
+numpy
+pandas
+requests
+python-dotenv
+botocore
+pydantic
+google-cloud-storage
+azure-storage-blob
+azure-keyvault-secrets
+azure-identity
+azure-mgmt-compute
+google-compute-engine
+google-cloud-dns
+google-cloud-appengine-admin
+mysql-connector-python
+SQLAlchemy
+pymongo
+opentelemetry-api
+opentelemetry-sdk
+azure-monitor-opentelemetry
