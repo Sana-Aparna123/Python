@@ -33,3 +33,57 @@ friends1.intersection(friends2) #It will give the common elements between friend
 #A frozenset is created using the function frozenset()
 aws_regions=['us-east-1', 'us-west-1','ap-south-1','ap-southeast-1','eu-west-1'] 
 frozen_set=frozenset(aws_regions)
+
+
+#NoneType
+#The None keyword is used to define a null value, or no value at all.
+#None is not the same as 0, False, or an empty string. None is a data type of its own (NoneType) and only None can be None.
+p = 10
+q = 20
+r = print(p+q) #It will print the sum of p and q and return None
+type(r) #It will return NoneType
+
+
+# x=None
+# if x is None:
+#     print(x)
+# else:
+#     print(x)
+    
+# type(x) #It will return NoneType
+    
+#Output:None
+
+x=20
+if x is None:
+    print(x)
+else:
+    print(x)
+    
+type(x) #It will return 20
+
+
+
+
+
+import boto3
+aws_regions=['us-east-1', 'us-west-1','ap-south-1','ap-southeast-1','eu-west-1'] 
+for region in aws_regions:
+    region_vpc=[]
+    ec2_Client=boto3.client('ec2',region_name=region)
+    vpc_list=ec2_Client.describe_vpcs().get('Vpcs',[])
+    for vpc in vpc_list:
+        region_vpc.append(vpc.get('VpcId'))
+        print(f"Lets gets print the vpc for region {region} ")
+        print(region_vpc)
+        print('-'*150)
+        
+        
+vpcs = ec2_Client.describe_vpcs()
+vpcs
+vpcs.keys()
+vpcs.get('Vpcs')
+vpcs.get('Vpcs')[0]   #It will give the first element of the list
+vpcs.get('Vpcs')[0]['VpcId'] #It will give the VPC ID of the first element of the list
+vpcs.get('Vpcs')[0]['CidrBlock'] #It will give the CIDR block of the first element of the list
+
