@@ -11,6 +11,8 @@ def get_vpcs(region):
         return vpc_list
     except NoRegionError as e:
         print("Error:",e)
+    except EndpointConnectionError as e:
+        print("Error:",e)
     except NoCredentialsError as e:
         print("Error:",e)
     except ClientError as e:

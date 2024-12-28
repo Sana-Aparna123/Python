@@ -1,0 +1,79 @@
+A virtual environment in programming, particularly in Python, is a self-contained directory that contains a Python installation for a particular version of Python, plus a number of additional packages. It allows you to manage dependencies for different projects separately, ensuring that each project can have its own dependencies, regardless of what dependencies every other project has.
+
+Key Points:
+Isolation: Each virtual environment has its own Python interpreter and libraries, which means you can have different versions of the same library in different projects.
+Dependency Management: Helps in managing project-specific dependencies without interfering with system-wide packages or other projects.
+Reproducibility: Makes it easier to reproduce the environment on another machine, which is crucial for collaboration and deployment.
+
+
+Steps:
+--------
+*Login to server and run these commands
+   > mkdir ALPHA
+   > mkdir BRAVO
+   > sudo apt update
+   > sudo apt install python3 python3-venv python3-pip -y
+#Note:check cat /etc/lsb-release -->for 22.04 or 24.04 versions they will ask to install "apt install python3.10-venv"
+   > python3 --version
+   > cd ALPHA   #another project
+   > python3 -m venv ALPHA
+   > source ALPHA/bin/activate
+   > pip list
+   > pip install boto3  -->now you can install necessary packages in ALPHA virtual environment.
+   > pip install Faker
+   > deactivate   #deactivating the ALPHA project.
+   > cd ..
+   > cd BRAVO     #another project
+   > python3 -m venv BRAVO 
+   > source BRAVO/bin/activate
+   > pip list
+   > pip install boto3
+   > pip install Faker
+
+
+#Note: Likewise you can install python related packages in your virtual environment of your project env efficiently
+
+I want send the files in another folder inside of BRAVO folder which is present in BRAVO folder
+ > cd BRAVO
+ > python3 -m venv venv  #another project
+ > dir
+ > ll venv
+ > source venv/bin/activate
+ > pip list
+ > pip install pandas
+ > pip freeze
+ > deactivate the BRAVO project
+ > cd ..
+ > mkdir CHARLIE
+ > cd CHARLIE
+ > python3 -m venv venv
+ > source venv/bin/activate
+ > code . -->it will poen vscode editor.
+ > create a file requirements.txt
+
+requirements.txt
+--------------
+numpy==2.2.1
+pandas==2.2.3
+python-dateutil==2.9.0.post0
+pytz==2024.2
+six==1.17.0
+tzdata==2024.2
+
+> pip install -r requirements.txt
+
+
+ 
+
+Scenario: if you have an requirement that same project pacakges versions required for another project so you can use the  "pip freeze" command it will freezethe pacakges details.
+> pip freeze
+output:
+------
+numpy==2.2.1
+pandas==2.2.3
+python-dateutil==2.9.0.post0
+pytz==2024.2
+six==1.17.0
+tzdata==2024.2
+
+
