@@ -16,15 +16,14 @@ len(pokemon_name_list) #1302
 print(pokemon_name_list)
 
 
-#Installing the pandas and jupyter notebook
-# pip3 install pandas
-# pip3 install jupyterlab
-# python3 -m jupyterlab --allow-root --ip=10.43.1.217 --> private ip of ec2 machine (It will give on url)
-#Access the below url in browser
-#  http://34.205.69.155:8888/lab?token=3a0f59cde4b9fcd0681fcf26cae44e1604440aa2168bef31-->here give the public ip of ec2 machine
-
-#we can use jupyter for csv files,excel files,sql files,python files etc.
-#Kaggle is a web platform that's a community for data scientists and machine learning practitioners.
-#It's a platform where you can find datasets, participate in competitions, and collaborate with other data scientists.
-#london_houses.csv(129.5 kB)  --> dataset from kaggle (download it)-->Houses in London dataset
-#Using pandas we can manipilate the above csv file data.
+  
+#Modules
+'''
+1.boto3
+2.Faker
+3.Json,os,sys,random,math
+4.virtual Environment
+5.Requests
+6.Pandas
+7.Jupyter Notebooks
+8.Regular Expressions  ''' 

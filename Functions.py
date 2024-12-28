@@ -59,3 +59,54 @@ list
 #     n=json.dumps(res,indent=4)
 #     print(n)
     
+    
+#For instances : give result in  form of list
+import boto3
+def get_ec2_instances():
+    ec2_client=boto3.client('ec2',region_name='us-east-1')
+    instances=ec2_client.describe_instances().get('Reservations')
+    instance_id=[instance['Instances'][0]['InstanceId'] for instance in instances]
+    print(instance_id)
+    
+get_ec2_instances()
+ 
+   
+import boto3
+def get_ec2_instances():
+    ec2_client=boto3.client('ec2',region_name='us-east-1')
+    instances=ec2_client.describe_instances().get('Reservations')
+    for instance in instances:
+        print(instance['Instances'][0]['InstanceId'])
+        
+get_ec2_instances()
+
+
+
+#multiple instances in multiple reservations
+import boto3
+
+def get_ec2_instances():
+    ec2_client = boto3.client('ec2', region_name='us-east-1')
+    instances = ec2_client.describe_instances().get('Reservations')
+    
+    # Fetch all Instance IDs in all Reservations
+    instance_ids = [
+        instance['InstanceId'] 
+        for reservation in instances 
+        for instance in reservation['Instances']
+    ]
+    
+    print(instance_ids)
+
+get_ec2_instances()
+
+#uploading an file to s3 bucket
+import boto3
+def s3_upload_file():
+    s3_client=boto3.client('s3',region_name='us-east-1')
+    s3_client.upload_file('london_houses.csv','awsb65-python-bucket','london_houses.csv')
+    print("File uploaded successfully")
+
+
+  
+  
